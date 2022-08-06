@@ -687,3 +687,105 @@ const form4new = {
   }
 }
 
+const form5 = {
+  "form": {
+    "first_name": {
+      "name": "Name",
+      "type": "String",
+      "order": 0,
+      "gid": "fullname"
+    },
+    "last_name": {
+      "name": null,
+      "type": "String",
+      "order": 1,
+      "gid": "fullname"
+    },
+    "email": {
+      "name": "Email",
+      "type": "String",
+      "order": 0,
+      "gid": "email_phone"
+    },
+    "phone": {
+      "name": "Phone",
+      "type": "Number",
+      "order": 1,
+      "gid": "email_phone"
+    },
+    "birth_date": {
+      "name": "Date of Birth",
+      "type": "Datetime",
+      "order": 0,
+      "gid": "g1"
+    },
+    "nationality": {
+      "name": "Nationality",
+      "type": "String",
+      "order": 1,
+      "gid": "g1"
+    },
+    "country": {
+      "name": "Country of Birth",
+      "type": "String",
+      "order": 2,
+      "gid": "g1"
+    },
+    "arrival_date": {
+      "name": "Date of Arrival",
+      "type": "Datetime",
+      "order": 0,
+      "gid": "g2"
+    },
+    "stay": {
+      "name": "Intended Length of Stay",
+      "type": "String",
+      "order": 1,
+      "gid": "g2"
+    },
+    "room": {
+      "name": "Room & Bed Number",
+      "type": "String",
+      "order": 2,
+      "gid": "g2"
+    },
+    "occupation": {
+      "name": "Occupation & Place of Employment",
+      "type": "String",
+      "order": 4
+    },
+    "submit_button": {
+      "name": "SEND",
+      "type": "Submit",
+      "order": 5
+    }
+  },
+  "styles": {
+    "first_name": {
+      "placeholder": "First"
+    },
+    "last_name": {
+      "placeholder": "Last"
+    },
+    "phone": {
+      "placeholder": "### ### ####"
+    },
+    "majors": {
+      "multiline": true
+    }
+  },
+  "groups": {
+    "fullname": {
+      "order": 0
+    },
+    "email_phone": {
+      "order": 1
+    },
+    "g1": {
+      "order": 2
+    },
+    "g2": {
+      "order": 3
+    }
+  }
+}
