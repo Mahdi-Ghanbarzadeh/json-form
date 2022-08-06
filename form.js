@@ -530,3 +530,160 @@ const form3 = {
   }
 }
 
+const form4 = {
+  "form": {
+    "first_name": {
+      "name": "First Name",
+      "type": "String",
+      "order": 0,
+      "gid": "fullname"
+    },
+    "last_name": {
+      "name": "Last Name",
+      "type": "String",
+      "order": 1,
+      "gid": "fullname"
+    },
+    "email": {
+      "name": "Email Address",
+      "type": "String",
+      "order": 1
+    },
+    "label2": {
+      "name": "Was our representative (check all that apply)",
+      "type": "Label",
+      "order": 2
+    },
+    "representative": {
+      "name": null,
+      "type": "Choices",
+      "order": 3,
+      "options": {
+        "choices": {
+          "professional": {
+            "name": "Professional and courteous?"
+          },
+          "knowledgeable": {
+            "name": "Knowledgeable?"
+          },
+          "friendly": {
+            "name": "Friendly?"
+          },
+          "efficient": {
+            "name": "Efficient?"
+          },
+          "patient": {
+            "name": "Patient?"
+          },
+          "respectful": {
+            "name": "Warm and respectful?"
+          },
+          "clear": {
+            "name": "Clear and direct?"
+          }
+        },
+        "multiple": true
+      }
+    },
+    "submit_button": {
+      "name": "Submit Feedback",
+      "type": "Submit",
+	  "order": 4,
+    }
+  },
+  "styles": {
+    "representative": {
+      "button_style": "check"
+    }
+  },
+  "groups": {
+    "fullname": {
+      "order": 0
+    }
+  }
+}
+
+
+const form4new = {
+  "form": {
+    "first_name": {
+      "name": "First Name",
+      "type": "String",
+      "order": 0,
+      "gid": "fullname"
+    },
+    "last_name": {
+      "name": "Last Name",
+      "type": "String",
+      "order": 1,
+      "gid": "fullname"
+    },
+    "email": {
+      "name": "Email Address",
+      "type": "String",
+      "order": 1
+    },
+    "label1": {
+      "name": "How was your overall expreince?",
+      "type": "Label",
+      "order": 2
+    },
+    "star": {
+      "name": null,
+      "type": "Star",
+      "order": 3
+    },
+    "label2": {
+      "name": "Was our representative (check all that apply)",
+      "type": "Label",
+      "order": 4
+    },
+    "representative": {
+      "name": null,
+      "type": "Choices",
+      "order": 5,
+      "options": {
+        "choices": {
+          "professional": {
+            "name": "Professional and courteous?"
+          },
+          "knowledgeable": {
+            "name": "Knowledgeable?"
+          },
+          "friendly": {
+            "name": "Friendly?"
+          },
+          "efficient": {
+            "name": "Efficient?"
+          },
+          "patient": {
+            "name": "Patient?"
+          },
+          "respectful": {
+            "name": "Warm and respectful?"
+          },
+          "clear": {
+            "name": "Clear and direct?"
+          }
+        },
+        "multiple": true
+      }
+    },
+    "submit_button": {
+      "name": "Submit Feedback",
+      "type": "Submit",
+	  "order": 6,
+    }
+  },
+  "styles": {
+    "representative": {
+      "button_style": "check"
+    }
+  },
+  "groups": {
+    "fullname": {
+      "order": 0
+    }
+  }
+}
+
