@@ -1,259 +1,278 @@
 const form1 = {
-  form: {
-    first_name: {
-      name: "First name",
-      type: "String",
-      order: 0,
+  "form": {
+    "first_name": {
+      "name": "First name",
+      "type": "String",
+      "order": 0
     },
-    last_name: {
-      name: "Last name",
-      type: "String",
-      order: 1,
+    "last_name": {
+      "name": "Last name",
+      "type": "String",
+      "order": 1
     },
-    email_address: {
-      name: "Email address",
-      type: "String",
-      order: 2,
+    "email_address": {
+      "name": "Email address",
+      "type": "String",
+      "order": 2
     },
-    phone_number1: {
-      name: "Phone number",
-      type: "Number",
-      order: 0,
-      gid: "phone",
+    "phone_number1": {
+      "name": "Phone number",
+      "type": "Number",
+      "order": 0,
+      "gid": "phone"
     },
-    phone_number2: {
-      name: null,
-      type: "Number",
-      order: 1,
-      gid: "phone",
+    "phone_number2": {
+      "name": null,
+      "type": "Number",
+      "order": 1,
+      "gid": "phone"
     },
-    phone_number3: {
-      name: null,
-      type: "Number",
-      order: 2,
-      gid: "phone",
+    "phone_number3": {
+      "name": null,
+      "type": "Number",
+      "order": 2,
+      "gid": "phone"
     },
-    phone_label: {
-      type: "Label",
-      name: "Ext.",
-      gid: "phone",
-      order: 3,
+    "phone_label": {
+      "type": "Label",
+      "name": "Ext.",
+      "gid": "phone",
+      "order": 3
     },
-    phone_number4: {
-      name: null,
-      type: "Number",
-      order: 4,
-      gid: "phone",
+    "phone_number4": {
+      "name": null,
+      "type": "Number",
+      "order": 4,
+      "gid": "phone"
     },
-    country: {
-      name: "Country",
-      type: "Choices",
-      order: 4,
-      options: {
-        choices: {
-          america: {
-            name: "United States of America",
+    "country": {
+      "name": "Country",
+      "type": "Choices",
+      "order": 4,
+      "options": {
+        "choices": {
+          "america": {
+            "name": "United States of America"
           },
-          iran: {
-            name: "Iran",
-          },
-        },
+          "iran": {
+            "name": "Iran"
+          }
+        }
       },
-      events: {
-        click: ["update_cities"],
-      },
+      "events": {
+        "click": [
+          "update_cities"
+        ]
+      }
     },
-    state: {
-      name: "State",
-      type: "Choices",
-      order: 5,
-      events: {
-        initialize: ["update_cities"],
-      },
+    "state": {
+      "name": "State",
+      "type": "Choices",
+      "order": 5,
+      "events": {
+        "initialize": [
+          "update_cities"
+        ]
+      }
     },
-    comments: {
-      name: "Comments or questions",
-      type: "String",
-      order: 6,
+    "comments": {
+      "name": "Comments or questions",
+      "type": "String",
+      "order": 6
     },
-    send_message_button: {
-      name: "Send Message",
-      type: "Submit",
-      gid: "buttons",
+    "send_message_button": {
+      "name": "Send Message",
+      "type": "Submit",
+      "gid": "buttons"
     },
-    cancel_button: {
-      name: "Cancel",
-      type: "Button",
-      gid: "buttons",
-      events: ["cancel"],
-    },
+    "cancel_button": {
+      "name": "Cancel",
+      "type": "Button",
+      "gid": "buttons",
+      "events": [
+        "cancel"
+      ]
+    }
   },
-  styles: {
-    comments: {
-      multiline: true,
-    },
+  "styles": {
+    "comments": {
+      "multiline": true
+    }
   },
-  groups: {
-    phone: {
-      order: 3,
+  "groups": {
+    "phone": {
+      "order": 3
     },
-    buttons: {
-      order: 7,
-    },
+    "buttons": {
+      "order": 7
+    }
   },
-  actions: {
-    update_cities: [
+  "actions": {
+    "update_cities": [
       {
-        rpc: {
-          type: "js",
-          name: "get_cities",
-          arguments: {
-            countries: {
-              mode: "document_reference",
-              type: "jsonpath",
-              value: "input.country",
-            },
-          },
-        },
-      },
+        "rpc": {
+          "type": "js",
+          "name": "get_cities",
+          "arguments": {
+            "countries": {
+              "mode": "document_reference",
+              "type": "jsonpath",
+              "value": "input.country"
+            }
+          }
+        }
+      }
     ],
-    cancel: [
+    "cancel": [
       {
-        submit: {
-          value: [],
-        },
-      },
-    ],
+        "submit": {
+          "value": []
+        }
+      }
+    ]
   },
-  js: 'function get_cities(countries) {\n  return [\n    {"update": {"form": {"city": {"options": {"choices":\n      Object.assign({}, ...countries.map(\n          country => (\n              {"iran": {\n                  "tehran": {"name": "Tehran"},\n                  "esfahan": {"name": "Esfahan"}},\n               "afghanistan": {\n                   "kabul": {"name": "Kabul"},\n                   "herat": {"name": "Herat"}}}[country])))}}}}}];\n}\n',
-};
+    "js": "function get_cities(countries) {\n  return [\n    {\"update\": {\"form\": {\"city\": {\"options\": {\"choices\":\n      Object.assign({}, ...countries.map(\n          country => (\n              {\"iran\": {\n                  \"tehran\": {\"name\": \"Tehran\"},\n                  \"esfahan\": {\"name\": \"Esfahan\"}},\n               \"afghanistan\": {\n                   \"kabul\": {\"name\": \"Kabul\"},\n                   \"herat\": {\"name\": \"Herat\"}}}[country])))}}}}}];\n}\n"
+}
+
 
 const form1new = {
-  form: {
-    first_name: {
-      name: "First name",
-      type: "String",
-      order: 0,
+  "form": {
+    "first_name": {
+      "name": "First name",
+      "type": "String",
+      "order": 0
     },
-    last_name: {
-      name: "Last name",
-      type: "String",
-      order: 1,
+    "last_name": {
+      "name": "Last name",
+      "type": "String",
+      "order": 1
     },
-    email_address: {
-      name: "Email address",
-      type: "String",
-      order: 2,
+    "email_address": {
+      "name": "Email address",
+      "type": "String",
+      "order": 2
     },
-    phone_number1: {
-      name: "Phone number",
-      type: "Number",
-      order: 0,
-      gid: "phone",
+    "phone_number1": {
+      "name": "Phone number",
+      "type": "Number",
+      "order": 0,
+      "gid": "phone"
     },
-    phone_number2: {
-      name: null,
-      type: "Number",
-      order: 1,
-      gid: "phone",
+    "phone_number2": {
+      "name": null,
+      "type": "Number",
+      "order": 1,
+      "gid": "phone"
     },
-    phone_number3: {
-      name: null,
-      type: "Number",
-      order: 2,
-      gid: "phone",
+    "phone_number3": {
+      "name": null,
+      "type": "Number",
+      "order": 2,
+      "gid": "phone"
     },
-    phone_label: {
-      type: "Label",
-      name: "Ext.",
-      gid: "phone",
-      order: 3,
+    "phone_label": {
+      "type": "Label",
+      "name": "Ext.",
+      "gid": "phone",
+      "order": 3
     },
-    phone_number4: {
-      name: null,
-      type: "Number",
-      order: 4,
-      gid: "phone",
+    "phone_number4": {
+      "name": null,
+      "type": "Number",
+      "order": 4,
+      "gid": "phone"
     },
-    country: {
-      name: "Country",
-      type: "Choices",
-      order: 4,
-      options: {
-        choices: {
-          america: {
-            name: "United States of America",
+    "country": {
+      "name": "Country",
+      "type": "Choices",
+      "order": 4,
+      "options": {
+        "choices": {
+          "america": {
+            "name": "United States of America"
           },
-          iran: {
-            name: "Iran",
-          },
-        },
+          "iran": {
+            "name": "Iran"
+          }
+        }
       },
-      events: {
-        click: ["update_cities"],
-      },
+      "events": {
+        "click": [
+          "update_cities"
+        ]
+      }
     },
-    state: {
-      name: "State",
-      type: "Choices",
-      order: 5,
-      events: {
-        initialize: ["update_cities"],
-      },
+    "state": {
+      "name": "State",
+      "type": "Choices",
+      "order": 5,
+      "events": {
+        "initialize": [
+          "update_cities"
+        ]
+      }
     },
-    comments: {
-      name: "Comments or questions",
-      type: "String",
-      order: 6,
+    "comments": {
+      "name": "Comments or questions",
+      "type": "String",
+      "order": 6
     },
-    send_message_button: {
-      name: "Send Message",
-      type: "Submit",
-      gid: "buttons",
+    "captcha": {
+      "name": null,
+      "type": "Captcha",
+      "order": 7
     },
-    cancel_button: {
-      name: "Cancel",
-      type: "Button",
-      gid: "buttons",
-      events: ["cancel"],
+    "send_message_button": {
+      "name": "Send Message",
+      "type": "Submit",
+      "gid": "buttons"
     },
+    "cancel_button": {
+      "name": "Cancel",
+      "type": "Button",
+      "gid": "buttons",
+      "events": [
+        "cancel"
+      ]
+    }
   },
-  styles: {
-    comments: {
-      multiline: true,
-    },
+  "styles": {
+    "comments": {
+      "multiline": true
+    }
   },
-  groups: {
-    phone: {
-      order: 3,
+  "groups": {
+    "phone": {
+      "order": 3,
+      "compact": true
     },
-    buttons: {
-      order: 7,
-    },
+    "buttons": {
+      "order": 8
+    }
   },
-  actions: {
-    update_cities: [
+  "actions": {
+    "update_cities": [
       {
-        rpc: {
-          type: "js",
-          name: "get_cities",
-          arguments: {
-            countries: {
-              mode: "document_reference",
-              type: "jsonpath",
-              value: "input.country",
-            },
-          },
-        },
-      },
+        "rpc": {
+          "type": "js",
+          "name": "get_cities",
+          "arguments": {
+            "countries": {
+              "mode": "document_reference",
+              "type": "jsonpath",
+              "value": "input.country"
+            }
+          }
+        }
+      }
     ],
-    cancel: [
+    "cancel": [
       {
-        submit: {
-          value: [],
-        },
-      },
-    ],
+        "submit": {
+          "value": []
+        }
+      }
+    ]
   },
-  js: 'function get_cities(countries) {\n  return [\n    {"update": {"form": {"city": {"options": {"choices":\n      Object.assign({}, ...countries.map(\n          country => (\n              {"iran": {\n                  "tehran": {"name": "Tehran"},\n                  "esfahan": {"name": "Esfahan"}},\n               "afghanistan": {\n                   "kabul": {"name": "Kabul"},\n                   "herat": {"name": "Herat"}}}[country])))}}}}}];\n}\n',
-};
+    "js": "function get_cities(countries) {\n  return [\n    {\"update\": {\"form\": {\"city\": {\"options\": {\"choices\":\n      Object.assign({}, ...countries.map(\n          country => (\n              {\"iran\": {\n                  \"tehran\": {\"name\": \"Tehran\"},\n                  \"esfahan\": {\"name\": \"Esfahan\"}},\n               \"afghanistan\": {\n                   \"kabul\": {\"name\": \"Kabul\"},\n                   \"herat\": {\"name\": \"Herat\"}}}[country])))}}}}}];\n}\n"
+}
