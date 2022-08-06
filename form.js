@@ -276,3 +276,144 @@ const form1new = {
   },
     "js": "function get_cities(countries) {\n  return [\n    {\"update\": {\"form\": {\"city\": {\"options\": {\"choices\":\n      Object.assign({}, ...countries.map(\n          country => (\n              {\"iran\": {\n                  \"tehran\": {\"name\": \"Tehran\"},\n                  \"esfahan\": {\"name\": \"Esfahan\"}},\n               \"afghanistan\": {\n                   \"kabul\": {\"name\": \"Kabul\"},\n                   \"herat\": {\"name\": \"Herat\"}}}[country])))}}}}}];\n}\n"
 }
+
+
+const form2 = {
+  "form": {
+    "name": {
+      "name": "Name",
+      "description": "Please enter your first and last name. (required)",
+      "type": "String",
+      "order": 0
+    },
+    "password": {
+      "name": "Password",
+      "description": "Password must be five or more characters. (required)",
+      "type": "Password",
+      "order": 1
+    },
+    "hobbies": {
+      "name": "Hobbies",
+      "description": "Check zero or more hobbies. (optional)",
+      "type": "Choices",
+      "order": 2,
+      "options": {
+        "choices": {
+          "surfing": {
+            "name": "Surfing"
+          },
+          "running": {
+            "name": "Running"
+          },
+          "biking": {
+            "name": "Biking"
+          },
+          "paddling": {
+            "name": "Paddling"
+          }
+        },
+        "multiple": true
+      }
+    },
+    "level": {
+      "name": "Level",
+      "description": "Select your grade level. (required)",
+      "type": "Choices",
+      "order": 3,
+      "options": {
+        "choices": {
+          "freshman": {
+            "name": "Freshman"
+          },
+          "sophomore": {
+            "name": "Sophomore"
+          },
+          "junior": {
+            "name": "Junior"
+          },
+          "senior": {
+            "name": "Senior"
+          },
+          "other": {
+            "name": "Other"
+          }
+        }
+      }
+    },
+    "gpa": {
+      "name": "GPA",
+      "description": "Select your GPA. (required)",
+      "type": "Choices",
+      "order": 4,
+      "options": {
+        "choices": {
+          "a": {
+            "name": "A"
+          },
+          "b": {
+            "name": "B"
+          },
+          "c": {
+            "name": "C"
+          },
+          "d": {
+            "name": "D"
+          },
+          "f": {
+            "name": "F"
+          }
+        }
+      }
+    },
+    "majors": {
+      "name": "Majors",
+      "type": "String",
+      "order": 5
+    },
+    "submit_button": {
+      "name": "Submit",
+      "type": "Submit",
+      "gid": "buttons"
+    },
+    "cancel_button": {
+      "name": "Cancel",
+      "type": "Button",
+      "gid": "buttons",
+      "events": [
+        "cancel"
+      ]
+    }
+  },
+  "styles": {
+    "name": {
+      "placeholder": "My Name"
+    },
+    "hobbies": {
+      "button_style": "check"
+    },
+    "level": {
+      "button_style": "radio"
+    },
+    "gpa": {
+      "choices_style": "dropdown"
+    },
+	"majors": {
+      "multiline": true
+    }
+  },
+  "groups": {
+    "buttons": {
+      "order": 6
+    }
+  },
+  "actions": {
+    "cancel": [
+      {
+        "submit": {
+          "value": []
+        }
+      }
+    ]
+  }
+}
+
