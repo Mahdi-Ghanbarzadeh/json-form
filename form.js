@@ -417,3 +417,116 @@ const form2 = {
   }
 }
 
+const form3 = {
+  "form": {
+    "first_name": {
+      "name": "Name",
+      "type": "String",
+      "order": 0,
+      "gid": "fullname"
+    },
+    "last_name": {
+      "name": null,
+      "type": "String",
+      "order": 1,
+      "gid": "fullname"
+    },
+    "month": {
+      "name": "Date of Birth",
+      "type": "Datetime",
+      "precision": "months",
+      "order": 0,
+      "gid": "birthday"
+    },
+    "day": {
+      "name": null,
+      "type": "Datetime",
+      "precision": "days",
+      "order": 1,
+      "gid": "birthday"
+    },
+    "year": {
+      "name": null,
+      "type": "Datetime",
+      "precision": "years",
+      "order": 2,
+      "gid": "birthday"
+    },
+    "label1": {
+      "name": "Have you been diagnosed with Covid-19?",
+      "type": "Label",
+      "order": 2
+    },
+    "covid": {
+      "name": null,
+      "type": "Choices",
+      "order": 3,
+      "options": {
+        "choices": {
+          "yes": {
+            "name": "Yes"
+          },
+          "no": {
+            "name": "No"
+          }
+        }
+      }
+    },
+    "label2": {
+      "name": "Please check all symptoms that apply:",
+      "type": "Label",
+      "order": 4
+    },
+    "symptoms": {
+      "name": null,
+      "type": "Choices",
+      "order": 5,
+      "options": {
+        "choices": {
+          "loss": {
+            "name": "Loss of taste/smell"
+          },
+          "breath": {
+            "name": "Difficulty breathing"
+          },
+          "cough": {
+            "name": "Cough"
+          },
+          "nose": {
+            "name": "Runny nose"
+          },
+          "aches": {
+            "name": "Body aches"
+          },
+          "throat": {
+            "name": "Sore throat"
+          }
+        },
+        "multiple": true
+      }
+    }
+  },
+  "styles": {
+    "first_name": {
+      "placeholder": "First Name"
+    },
+    "last_name": {
+      "placeholder": "Last Name"
+    },
+    "covid": {
+      "button_style": "radio"
+    },
+    "symptoms": {
+      "button_style": "check"
+    }
+  },
+  "groups": {
+    "fullname": {
+      "order": 0
+    },
+    "birthday": {
+      "order": 1
+    }
+  }
+}
+
