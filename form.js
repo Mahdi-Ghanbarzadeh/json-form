@@ -789,3 +789,202 @@ const form5 = {
     }
   }
 }
+
+const form6 = {
+  "form": {
+    "first_name": {
+      "name": null,
+      "type": "String",
+      "order": 0,
+      "gid": "fullname"
+    },
+    "last_name": {
+      "name": null,
+      "type": "String",
+      "order": 1,
+      "gid": "fullname"
+    },
+    "email": {
+      "name": "E-mail",
+      "type": "String",
+      "order": 1
+    },
+    "password": {
+      "name": "Password",
+      "type": "Password",
+      "order": 2
+    },
+    "confirm_password": {
+      "name": "Confirm Password",
+      "type": "Password",
+      "order": 3
+    },
+    "phone_code": {
+      "name": "Phone Number",
+      "type": "Choices",
+      "order": 0,
+      "gid": "phone_gp",
+      "options": {
+        "choices": {
+          "iran": {
+            "name": "+98"
+          },
+          "america": {
+            "name": "+1"
+          }
+        }
+      }
+    },
+    "phone_number": {
+      "name": null,
+      "type": "String",
+      "order": 1,
+      "gid": "phone_gp"
+    },
+    "donation": {
+      "name": "Donation",
+      "type": "Number",
+      "order": 0,
+      "gid": "donation_gp"
+    },
+    "donation_type": {
+      "name": null,
+      "type": "Choices",
+      "order": 1,
+      "gid": "donation_gp",
+      "options": {
+        "choices": {
+          "rial": {
+            "name": "ریال"
+          },
+          "dollar": {
+            "name": "$"
+          }
+        }
+      }
+    },
+    "submit_button": {
+      "name": "Submit",
+      "type": "Submit",
+      "order": 6,
+    },
+  },
+  "styles": {
+    "first_name": {
+      "placeholder": "First Name"
+    },
+    "last_name": {
+      "placeholder": "Last Name"
+    },
+    "phone_gp": {
+      "display": "compact"
+    },
+    "donation_gp": {
+      "display": "compact"
+    }
+  },
+  "groups": {
+    "fullname": {
+      "array": true,
+      "order": 0
+    },
+    "phone_gp": {
+      "order": 4
+    },
+    "donation_gp": {
+      "order": 5
+    }
+  }
+}
+
+const form6new = {
+  "form": {
+    "first_name": {
+      "name": null,
+      "type": "String",
+      "order": 0,
+      "gid": "fullname"
+    },
+    "last_name": {
+      "name": null,
+      "type": "String",
+      "order": 1,
+      "gid": "fullname"
+    },
+    "email": {
+      "name": "E-mail",
+      "type": "String",
+      "order": 1
+    },
+    "password": {
+      "name": "Password",
+      "type": "Password",
+      "order": 2
+    },
+    "confirm_password": {
+      "name": "Confirm Password",
+      "type": "Password",
+      "order": 3
+    },
+    "phone_number": {
+      "name": "Phone Number",
+      "type": "ChoicesInput",
+      "order": 4,
+      "options": {
+        "choices": {
+          "iran": {
+            "name": "+98"
+          },
+          "america": {
+            "name": "+1"
+          }
+        }
+      }
+    },
+    "donation": {
+      "name": "Donation",
+      "type": "ChoicesInput",
+      "order": 5,
+      "options": {
+        "choices": {
+          "rial": {
+            "name": "ریال"
+          },
+          "dollar": {
+            "name": "$"
+          }
+        }
+      }
+    },
+    "slider": {
+      "name": "Slider",
+      "type": "Slider",
+      "order": 6
+    },
+    "submit_button": {
+      "name": "Submit",
+      "type": "Submit",
+      "order": 7,
+    },
+  },
+  "styles": {
+    "first_name": {
+      "placeholder": "First Name"
+    },
+    "last_name": {
+      "placeholder": "Last Name"
+    },
+    "phone_number": {
+      "type": "prefix"
+    },
+    "donation": {
+      "type": "suffix"
+    }
+  },
+  "groups": {
+    "fullname": {
+      "array": true,
+      "order": 0
+    }
+  }
+}
