@@ -988,3 +988,207 @@ const form6new = {
     }
   }
 }
+
+
+const form7 = {
+  "form": {
+    "email": {
+      "name": "E-mail",
+      "type": "String",
+      "order": 0
+    },
+    "phone_code": {
+      "name": "Phone Number",
+      "type": "Choices",
+      "order": 0,
+      "gid": "phone_gp",
+      "options": {
+        "choices": {
+          "iran": {
+            "name": "+98"
+          },
+          "america": {
+            "name": "+1"
+          }
+        }
+      }
+    },
+    "phone_number": {
+      "name": null,
+      "type": "String",
+      "order": 1,
+      "gid": "phone_gp"
+    },
+    "gender": {
+      "name": "Gender[only one]",
+      "type": "Choices",
+      "order": 2,
+      "options": {
+        "choices": {
+          "male": {
+            "name": "Male"
+          },
+          "female": {
+            "name": "Female"
+          },
+          "other": {
+            "name": "Other"
+          }
+        }
+      }
+    },
+    "select": {
+      "name": "Select[multiple]",
+      "type": "Choices",
+      "order": 3,
+      "multiple": true,
+      "options": {
+        "choices": {
+          "red": {
+            "name": "Red"
+          },
+          "green": {
+            "name": "Green"
+          },
+          "blue": {
+            "name": "Blue"
+          }
+        }
+      }
+    },
+    "input_number": {
+      "name": "InputNumber",
+      "type": "Number",
+      "order": 0,
+      "gid": "number_gp"
+    },
+    "number_label": {
+      "type": "Label",
+      "name": "machines",
+      "order": 1,
+      "gid": "number_gp"
+    },
+    "agreement": {
+      "name": "I have read the agreement",
+      "type": "Boolean",
+      "order": 5
+    },
+    "submit_button": {
+      "name": "Submit",
+      "type": "Submit",
+      "order": 6
+    }
+  },
+  "styles": {
+    "phone_gp": {
+      "display": "compact"
+    }
+  },
+  "groups": {
+    "phone_gp": {
+      "order": 1
+    },
+    "number_gp": {
+      "order": 4
+    }
+  }
+}
+
+const form7new = {
+  "form": {
+    "email": {
+      "name": "E-mail",
+      "type": "String",
+      "order": 0
+    },
+    "phone_number": {
+      "name": "Phone Number",
+      "type": "ChoicesInput",
+      "order": 1,
+      "options": {
+        "choices": {
+          "iran": {
+            "name": "+98"
+          },
+          "america": {
+            "name": "+1"
+          }
+        }
+      }
+    },
+    "gender": {
+      "name": "Gender[only one]",
+      "type": "Choices",
+      "order": 2,
+      "options": {
+        "choices": {
+          "male": {
+            "name": "Male"
+          },
+          "female": {
+            "name": "Female"
+          },
+          "other": {
+            "name": "Other"
+          }
+        }
+      }
+    },
+    "select": {
+      "name": "Select[multiple]",
+      "type": "Choices",
+      "order": 3,
+      "multiple": true,
+      "options": {
+        "choices": {
+          "red": {
+            "name": "Red"
+          },
+          "green": {
+            "name": "Green"
+          },
+          "blue": {
+            "name": "Blue"
+          }
+        }
+      }
+    },
+    "input_number": {
+      "name": "InputNumber",
+      "type": "Number",
+      "order": 0,
+      "gid": "number_gp"
+    },
+    "number_label": {
+      "type": "Label",
+      "name": "machines",
+      "order": 1,
+      "gid": "number_gp"
+    },
+    "switch": {
+      "name": "Switch",
+      "type": "Switch",
+      "order": 5
+    },
+    "agreement": {
+      "name": "I have read the agreement",
+      "type": "Boolean",
+      "order": 6
+    },
+    "submit_button": {
+      "name": "Submit",
+      "type": "Submit",
+      "order": 7
+    }
+  },
+  "styles": {
+    "phone_number": {
+      "type": "prefix"
+    }
+  },
+  "groups": {
+    "number_gp": {
+      "order": 4
+    }
+  }
+}
