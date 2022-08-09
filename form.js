@@ -1192,3 +1192,200 @@ const form7new = {
     }
   }
 }
+
+const form8 = {
+  "form": {
+    "company_name": {
+      "name": "Company Name",
+      "type": "String",
+      "order": 0
+    },
+    "passengers_name": {
+      "name": "Passengers",
+      "type": "String",
+      "array": true,
+      "order": 1
+    },
+    "radio_group": {
+      "name": "Radio.Group",
+      "type": "Choices",
+      "order": 2,
+      "options": {
+        "choices": {
+          "tour1": {
+            "name": "tour 1"
+          },
+          "tour2": {
+            "name": "tour 2"
+          },
+          "tour3": {
+            "name": "tour 3"
+          }
+        }
+      }
+    },
+    "radio_button": {
+      "name": "Radio.Button",
+      "type": "Choices",
+      "order": 3,
+      "options": {
+        "choices": {
+          "tour1": {
+            "name": "tour 1"
+          },
+          "tour2": {
+            "name": "tour 2"
+          },
+          "tour3": {
+            "name": "tour 3"
+          }
+        }
+      }
+    },
+    "checkbox_group": {
+      "name": "Checkbox.Group",
+      "type": "Choices",
+      "order": 4,
+      "options": {
+        "choices": {
+          "option1": {
+            "name": "Option 1"
+          },
+          "option2": {
+            "name": "Option 2"
+          },
+          "option3": {
+            "name": "Option 3"
+          },
+          "option4": {
+            "name": "Option 4"
+          },
+          "option5": {
+            "name": "Option 5"
+          },
+          "option6": {
+            "name": "Option 6"
+          }
+        }
+      },
+      "multiple": true
+    },
+    "submit_button": {
+      "name": "Submit",
+      "type": "Submit",
+      "order": 5
+    }
+  },
+  "styles": {
+    "radio_group": {
+      "button_style": "radio"
+    },
+    "radio_button": {
+      "button_style": "button"
+    },
+    "checkbox_group": {
+      "button_style": "check"
+    }
+  }
+}
+
+const form8new = {
+  "form": {
+    "company_name": {
+      "name": "Company Name",
+      "type": "String",
+      "order": 0
+    },
+    "passengers_name": {
+      "name": "Passengers",
+      "type": "String",
+      "array": true,
+      "order": 1
+    },
+    "radio_group": {
+      "name": "Radio.Group",
+      "type": "Choices",
+      "order": 2,
+      "options": {
+        "choices": {
+          "tour1": {
+            "name": "tour 1"
+          },
+          "tour2": {
+            "name": "tour 2"
+          },
+          "tour3": {
+            "name": "tour 3"
+          }
+        }
+      }
+    },
+    "radio_button": {
+      "name": "Radio.Button",
+      "type": "Choices",
+      "order": 3,
+      "options": {
+        "choices": {
+          "tour1": {
+            "name": "tour 1"
+          },
+          "tour2": {
+            "name": "tour 2"
+          },
+          "tour3": {
+            "name": "tour 3"
+          }
+        }
+      }
+    },
+    "checkbox_group": {
+      "name": "Checkbox.Group",
+      "type": "Choices",
+      "order": 4,
+      "options": {
+        "choices": {
+          "option1": {
+            "name": "Option 1"
+          },
+          "option2": {
+            "name": "Option 2"
+          },
+          "option3": {
+            "name": "Option 3"
+          },
+          "option4": {
+            "name": "Option 4"
+          },
+          "option5": {
+            "name": "Option 5"
+          },
+          "option6": {
+            "name": "Option 6"
+          }
+        }
+      },
+      "multiple": true
+    },
+    "rate": {
+      "name": "Rate",
+      "type": "Star",
+      "order": 5
+    },
+    "submit_button": {
+      "name": "Submit",
+      "type": "Submit",
+      "order": 6
+    }
+  },
+  "styles": {
+    "radio_group": {
+      "button_style": "radio"
+    },
+    "radio_button": {
+      "button_style": "button"
+    },
+    "checkbox_group": {
+      "button_style": "check"
+    }
+  }
+}
