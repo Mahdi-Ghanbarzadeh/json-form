@@ -131,7 +131,7 @@ const form1 = {
       }
     ]
   },
-    "js": "function get_cities(countries) {\n  return [\n    {\"update\": {\"form\": {\"city\": {\"options\": {\"choices\":\n      Object.assign({}, ...countries.map(\n          country => (\n              {\"iran\": {\n                  \"tehran\": {\"name\": \"Tehran\"},\n                  \"esfahan\": {\"name\": \"Esfahan\"}},\n               \"afghanistan\": {\n                   \"kabul\": {\"name\": \"Kabul\"},\n                   \"herat\": {\"name\": \"Herat\"}}}[country])))}}}}}];\n}\n"
+  "js": "function get_cities(countries) {\n  return [\n    {\"update\": {\"form\": {\"city\": {\"options\": {\"choices\":\n      Object.assign({}, ...countries.map(\n          country => (\n              {\"iran\": {\n                  \"tehran\": {\"name\": \"Tehran\"},\n                  \"esfahan\": {\"name\": \"Esfahan\"}},\n               \"afghanistan\": {\n                   \"kabul\": {\"name\": \"Kabul\"},\n                   \"herat\": {\"name\": \"Herat\"}}}[country])))}}}}}];\n}\n"
 }
 
 
@@ -1469,4 +1469,226 @@ const form9new = {
       "order": 7
     }
   }
+}
+
+const form10 = {
+  "form": {
+    "name": {
+      "name": "Name",
+      "type": "String",
+      "order": 0
+    },
+    "country": {
+      "name": "Country",
+      "type": "Choices",
+      "order": 1,
+      "options": {
+        "choices": {
+          "iran": {
+            "name": "Iran"
+          },
+          "netherland": {
+            "name": "Netherland"
+          }
+        }
+      },
+      "events": {
+        "click": [
+          "update_cities"
+        ]
+      }
+    },
+    "city": {
+      "name": "City",
+      "type": "Choices",
+      "order": 2,
+      "events": {
+        "initialize": [
+          "update_cities"
+        ]
+      }
+    },
+    "group_name": {
+      "name": "Group Name",
+      "type": "String",
+      "order": 3
+    },
+    "user_list": {
+      "name": "User List",
+      "type": "label",
+      "array": true,
+      "order": 4
+    },
+    "add_button": {
+      "name": "Add User",
+      "type": "Button",
+      "order": 5,
+      "events": [
+        {
+          "click": "show_modal"
+        }
+      ]
+    },
+    "submit_button": {
+      "name": "Submit",
+      "type": "Submit",
+      "order": 6
+    }
+  },
+  "actions": {
+    "update_cities": [
+      {
+        "rpc": {
+          "type": "js",
+          "name": "get_cities",
+          "arguments": {
+            "countries": {
+              "mode": "document_reference",
+              "type": "jsonpath",
+              "value": "input.country"
+            }
+          }
+        }
+      }
+    ],
+    "show_modal": [
+      {
+        "rpc": null,
+        "type": "js2",
+        "name": "show_eula"
+      }
+    ]
+  },
+  "js": "function get_cities(countries) {\n  return [\n    {\"update\": {\"form\": {\"city\": {\"options\": {\"choices\":\n      Object.assign({}, ...countries.map(\n          country => (\n              {\"iran\": {\n                  \"tehran\": {\"name\": \"Tehran\"},\n                  \"isfahan\": {\"name\": \"Isfahan\"}},\n               \"netherland\": {\n                   \"limburg\": {\"name\": \"Limburg\"},\n                   \"zeeland\": {\"name\": \"Zeeland\"}}}[country])))}}}}}];\n}\n",
+  "js2": "function show_eula() {\n  return [{\n    \"modal\": {\n       \"title\": \"Add User\"\n       \"form\": {\n         \"version\": \"1\",\n         \"form\": {\n           \"user_name\": {\"name\": \"User Name\",\n                    \"type\": \"String\"},\n           \"user_age\": {\"name\": \"User Age\",\n                       \"type\": \"Number\",\n                       },\n            \"cancel_btn\": {\"name\": \"Cancel\",\n                    \"type\": \"Button\",\n                    \"gid\": \"btns\",\n                    \"events\": [{\"click\": \"cancel\"}]\n            },\n            \"ok_btn\": {\"name\": \"OK\",\n                    \"type\": \"Button\",\n                    \"gid\": \"btns\",\n                    \"events\": [{\"click\": \"ok\"}]\n            },\n         }\n         \"actions\": {\n            \"ok\": [\n              {\n                \"update\": {\n                  \"extend_arrays\": true,\n                  \"form\": {\n                    \"user_list\": {\n                      \"name\": \"input.user_name + input.user_age\",\n                      \"type\": \"label\",\n                    }\n                  }\n                }\n              }\n            ],\n            \"cancel\": [\n              {\n                \"remove\": {\n                  \"modal\": null\n                }\n              }\n            ]\n},}}}];\n}\n"
+}
+
+const form10new = {
+  "form": {
+    "name": {
+      "name": "Name",
+      "type": "String",
+      "order": 0
+    },
+    "country": {
+      "name": "Country",
+      "type": "Choices",
+      "order": 1,
+      "options": {
+        "choices": {
+          "iran": {
+            "name": "Iran"
+          },
+          "netherland": {
+            "name": "Netherland"
+          }
+        }
+      },
+      "events": {
+        "click": [
+          "update_cities"
+        ]
+      }
+    },
+    "city": {
+      "name": "City",
+      "type": "Choices",
+      "order": 2,
+      "events": {
+        "initialize": [
+          "update_cities"
+        ]
+      }
+    },
+    "country_city": {
+      "name": "Country - City",
+      "type": "Cascader",
+      "order": 3,
+      "options": {
+        "choices": {
+          "iran": {
+            "name": "Iran",
+            "children": [
+              {
+                "isfahan": {
+                  "name": "Isfahan",
+                  "children": [{
+                      "isfahan": {
+                        "name": "Isfahan"
+                      }
+                    }
+                  ]
+                },
+                "tehran": {
+                  "name": "Tehran"
+                }
+              }
+            ]
+          },
+          "netherland": {
+            "name": "Netherland",
+            "children": [
+                {
+                  "limburg": {
+                  "name": "Limburg"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "group_name": {
+      "name": "Group Name",
+      "type": "String",
+      "order": 4
+    },
+    "user_list": {
+      "name": "User List",
+      "type": "label",
+      "array": true,
+      "order": 5
+    },
+    "add_button": {
+      "name": "Add User",
+      "type": "Button",
+      "order": 6,
+      "events": [
+        {
+          "click": "show_modal"
+        }
+      ]
+    },
+    "submit_button": {
+      "name": "Submit",
+      "type": "Submit",
+      "order": 7
+    }
+  },
+  "actions": {
+    "update_cities": [
+      {
+        "rpc": {
+          "type": "js",
+          "name": "get_cities",
+          "arguments": {
+            "countries": {
+              "mode": "document_reference",
+              "type": "jsonpath",
+              "value": "input.country"
+            }
+          }
+        }
+      }
+    ],
+    "show_modal": [
+      {
+        "rpc": null,
+        "type": "js2",
+        "name": "show_eula"
+      }
+    ]
+  },
+  "js": "function get_cities(countries) {\n  return [\n    {\"update\": {\"form\": {\"city\": {\"options\": {\"choices\":\n      Object.assign({}, ...countries.map(\n          country => (\n              {\"iran\": {\n                  \"tehran\": {\"name\": \"Tehran\"},\n                  \"isfahan\": {\"name\": \"Isfahan\"}},\n               \"netherland\": {\n                   \"limburg\": {\"name\": \"Limburg\"},\n                   \"zeeland\": {\"name\": \"Zeeland\"}}}[country])))}}}}}];\n}\n",
+  "js2": "function show_eula() {\n  return [{\n    \"modal\": {\n       \"title\": \"Add User\"\n       \"form\": {\n         \"version\": \"1\",\n         \"form\": {\n           \"user_name\": {\"name\": \"User Name\",\n                    \"type\": \"String\"},\n           \"user_age\": {\"name\": \"User Age\",\n                       \"type\": \"Number\",\n                       },\n            \"cancel_btn\": {\"name\": \"Cancel\",\n                    \"type\": \"Button\",\n                    \"gid\": \"btns\",\n                    \"events\": [{\"click\": \"cancel\"}]\n            },\n            \"ok_btn\": {\"name\": \"OK\",\n                    \"type\": \"Button\",\n                    \"gid\": \"btns\",\n                    \"events\": [{\"click\": \"ok\"}]\n            },\n         }\n         \"actions\": {\n            \"ok\": [\n              {\n                \"update\": {\n                  \"extend_arrays\": true,\n                  \"form\": {\n                    \"user_list\": {\n                      \"name\": \"input.user_name + input.user_age\",\n                      \"type\": \"label\",\n                    }\n                  }\n                }\n              }\n            ],\n            \"cancel\": [\n              {\n                \"remove\": {\n                  \"modal\": null\n                }\n              }\n            ]\n},}}}];\n}\n"
 }
