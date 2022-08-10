@@ -1389,3 +1389,84 @@ const form8new = {
     }
   }
 }
+
+const form9 = {
+  "form": {
+    "name": {
+      "name": "Name",
+      "type": "String",
+      "order": 0
+    },
+    "date_picker": {
+      "name": "DatePicker",
+      "type": "Datetime",
+      "precision": "days",
+      "order": 1
+    },
+    "month_picker": {
+      "name": "MonthPicker",
+      "type": "Datetime",
+      "precision": "months",
+      "order": 2
+    },
+    "time_picker": {
+      "name": "TimePicker",
+      "type": "Datetime",
+      "precision": "seconds",
+      "order": 3
+    },
+    "submit_button": {
+      "name": "Submit",
+      "type": "Submit",
+      "order": 4
+    }
+  }
+}
+
+const form9new = {
+  "form": {
+    "name": {
+      "name": "Name",
+      "type": "String",
+      "order": 0
+    },
+    "date_picker": {
+      "name": "DatePicker",
+      "type": "Datetime",
+      "precision": "days",
+      "order": 1
+    },
+    "month_picker": {
+      "name": "MonthPicker",
+      "type": "Datetime",
+      "precision": "months",
+      "order": 2
+    },
+    "range_picker": {
+      "name": "RangePicker",
+      "type": "RangePicker",
+      "order": 3
+    },
+    "time_picker": {
+      "name": "TimePicker",
+      "type": "Datetime",
+      "precision": "seconds",
+      "order": 4
+    },
+    "upload": {
+      "name": "Upload",
+      "type": "Upload",
+      "order": 5
+    },
+    "dragger": {
+      "name": "Dragger",
+      "type": "Dragger",
+      "order": 6
+    },
+    "submit_button": {
+      "name": "Submit",
+      "type": "Submit",
+      "order": 7
+    }
+  }
+}
