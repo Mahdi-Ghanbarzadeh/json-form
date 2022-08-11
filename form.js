@@ -716,6 +716,7 @@ const form5 = {
     "birth_date": {
       "name": "Date of Birth",
       "type": "Datetime",
+      "precision": "days",
       "order": 0,
       "gid": "g1"
     },
@@ -734,6 +735,7 @@ const form5 = {
     "arrival_date": {
       "name": "Date of Arrival",
       "type": "Datetime",
+      "precision": "days",
       "order": 0,
       "gid": "g2"
     },
